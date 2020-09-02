@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/dist/img/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/css/main.css" />
+    <title>Dev Portfolio</title>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <header>
+      <div class="menu-btn">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
+
+      <nav class="menu">
+        <div class="menu-branding">
+          <div class="portrait"></div>
+        </div>
+        <ul class="menu-nav">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item current">
+            <a href="work.html" class="nav-link">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="work">
+      <h1 class="lg-heading">My <span class="text-highlight">Portfolio</span></h1>
+      <h2 class="sm-heading">1 picture million words</h2>
+      <div class="photos">
+        <div class="main-img">
+          <img src="/dist/img/photo1.jpg" id="current">
+        </div>
+
+        <div class="imgs">
+          <img src="/dist/img/photo1.jpg">
+          <img src="/dist/img/photo2.jpg">
+          <img src="/dist/img/photo3.jpg">
+          <img src="/dist/img/photo4.jpg">
+          <img src="/dist/img/photo5.jpg">
+          <img src="/dist/img/photo6.jpg">
+          <img src="/dist/img/photo7.jpg">
+          <img src="/dist/img/photo8.jpg">
+          <img src="/dist/img/photo9.jpg">
+          <img src="/dist/img/photo10.jpg">
+        </div>
+      
+      </div>
+    </main>
+    <footer id="main-footer">
+      <p>
+        Copyright &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Made with
+        <a href="https://github.com/abregre" style="text-decoration: none"
+          >❤️</a
+        >
+      </p>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
