@@ -1,0 +1,182 @@
+@import 'config';
+@import 'menu';
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  @include background;
+  background: $clrPrimary;
+  color: $clrText;
+  height: 100%;
+  font-family: $fntText;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: $fntTitle;
+  &.lg-heading {
+    font-size: 6rem;
+  }
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($clrPrimary, 2), 0.5);
+  }
+}
+a {
+  text-decoration: none;
+  color: $clrText;
+  &:hover {
+    color: $clrHighlight;
+    @include easeOut();
+  }
+}
+ul {
+  list-style: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+.text-highlight {
+  color: $clrHighlight;
+}
+
+main {
+  padding: 4rem;
+   height: 100%;
+
+
+  &#home {
+    overflow: hidden;
+    h1 {
+      margin-top: 25vh;
+    }
+  }
+  .social-links {
+    margin-top: 1rem;
+    a {
+      padding: 0.4rem;
+
+      &:hover {
+        color: $clrHighlight;
+        @include easeOut();
+      }
+    }
+  }
+}
+
+.about-info{
+  display: grid;
+  grid-template-areas:
+  'bio-img bio bio'
+  'job1 job2 job3';
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 30px;
+  .bio-img{
+    grid-area: bio-img;
+    margin: auto;
+    border-radius: 50%;
+    border: 3px solid $clrHighlight;
+  }
+  .bio{
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+  h5{
+    color: $clrHighlight;
+  }
+  .job-1{
+    grid-area: job1;
+    background: lighten($clrPrimary, 5);
+    padding: 0.8rem;
+    border-bottom: 3px solid $clrHighlight;
+    font-size: 1.2rem;
+  }
+  .job-2{
+    grid-area: job2;
+    background: lighten($clrPrimary, 5);
+    padding: 0.8rem;
+    border-bottom: 3px solid $clrHighlight;
+    font-size: 1.2rem;
+  }
+  .job-3{
+    grid-area: job3;
+    background: lighten($clrPrimary, 5);
+    padding: 0.8rem;
+    border-bottom: 3px solid $clrHighlight;
+    font-size: 1.2rem;
+  }
+  
+}
+
+.photos{
+  background-color: #fff;
+  max-width: 760px;
+  margin: auto;
+  border: 15px solid white;
+}
+.main-img img,
+.imgs img{
+  width: 100%;
+}
+.imgs{
+  display: grid;
+  grid-template-columns: repeat(10,1fr);
+  grid-gap: 5px;
+}
+@keyframes fadeIn{
+  to{
+    opacity: 1;
+  }
+}
+.fade-in{
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in 1 forwards;
+}
+
+.boxes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+
+  div{
+    border: 1px solid $clrHighlight;
+    padding: 1rem;
+    margin: 1rem;
+    @include easeOut;
+    &:hover,&:focus{
+      padding: 2rem;
+      @include easeOut;
+    }
+  }
+}
+
+
+#main-footer{
+  text-align: center;
+  padding: 1rem;
+  background: darken($clrPrimary, 5);
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@import 'mobile';

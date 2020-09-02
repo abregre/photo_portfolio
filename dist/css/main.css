@@ -1,0 +1,310 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 70px;
+  top: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease-out; }
+  .menu-btn .btn-line {
+    width: 32px;
+    height: 4px;
+    background-color: #8E3B46;
+    margin: 0 0 5px 0;
+    transition: all 0.3s ease-out; }
+  .menu-btn.close .btn-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); }
+  .menu-btn.close .btn-line:nth-child(2) {
+    display: none; }
+  .menu-btn.close .btn-line:nth-child(3) {
+    transform: rotate(-45deg) translate(1px, -1px); }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; }
+  .menu-nav {
+    margin: 0;
+    padding: 0;
+    background: rgba(37, 36, 36, 0.8);
+    transform: translate3d(0, -100%, 0);
+    transition: all 0.3s ease-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    margin: 0;
+    padding: 0;
+    background: rgba(50, 48, 49, 0.8);
+    transform: translate3d(0, 100%, 0);
+    transition: all 0.3s ease-out; }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      width: 280px;
+      height: 280px;
+      background: url("/dist/img/profile.jpg") no-repeat center/cover;
+      border-radius: 50%;
+      border: solid 3px #F4B942; }
+  .menu .nav-item {
+    transform: translate3d(600px, 0, 0);
+    transition: all 0.3s ease-out; }
+    .menu .nav-item.show {
+      transform: translate3d(0, 0, 0); }
+    .menu .nav-item.current > a {
+      color: #F4B942; }
+  .menu .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    transition: all 0.3s ease-out; }
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+body {
+  background: #323031;
+  color: #9BC1BC;
+  height: 100%;
+  font-family: "Roboto Mono", monospace;
+  line-height: 1.5; }
+  body#bg-img {
+    background: url("/dist/img/homebg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center; }
+    body#bg-img:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(50, 48, 49, 0.8);
+      z-index: -1; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "Russo One", sans-serif; }
+  h1.lg-heading,
+  h2.lg-heading,
+  h3.lg-heading,
+  h4.lg-heading,
+  h5.lg-heading,
+  h6.lg-heading {
+    font-size: 6rem; }
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading,
+  h4.sm-heading,
+  h5.sm-heading,
+  h6.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(55, 53, 54, 0.5); }
+
+a {
+  text-decoration: none;
+  color: #9BC1BC; }
+  a:hover {
+    color: #F4B942;
+    transition: all 0.3s ease-out; }
+
+ul {
+  list-style: none; }
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%; }
+
+.text-highlight {
+  color: #F4B942; }
+
+main {
+  padding: 4rem;
+  height: 100%; }
+  main#home {
+    overflow: hidden; }
+    main#home h1 {
+      margin-top: 25vh; }
+  main .social-links {
+    margin-top: 1rem; }
+    main .social-links a {
+      padding: 0.4rem; }
+      main .social-links a:hover {
+        color: #F4B942;
+        transition: all 0.3s ease-out; }
+
+.about-info {
+  display: grid;
+  grid-template-areas: 'bio-img bio bio' 'job1 job2 job3';
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 30px; }
+  .about-info .bio-img {
+    grid-area: bio-img;
+    margin: auto;
+    border-radius: 50%;
+    border: 3px solid #F4B942; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem; }
+  .about-info h5 {
+    color: #F4B942; }
+  .about-info .job-1 {
+    grid-area: job1;
+    background: #3f3c3e;
+    padding: 0.8rem;
+    border-bottom: 3px solid #F4B942;
+    font-size: 1.2rem; }
+  .about-info .job-2 {
+    grid-area: job2;
+    background: #3f3c3e;
+    padding: 0.8rem;
+    border-bottom: 3px solid #F4B942;
+    font-size: 1.2rem; }
+  .about-info .job-3 {
+    grid-area: job3;
+    background: #3f3c3e;
+    padding: 0.8rem;
+    border-bottom: 3px solid #F4B942;
+    font-size: 1.2rem; }
+
+.photos {
+  background-color: #fff;
+  max-width: 760px;
+  margin: auto;
+  border: 15px solid white; }
+
+.main-img img,
+.imgs img {
+  width: 100%; }
+
+.imgs {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 5px; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; } }
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in 1 forwards; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem; }
+  .boxes div {
+    border: 1px solid #F4B942;
+    padding: 1rem;
+    margin: 1rem;
+    transition: all 0.3s ease-out; }
+    .boxes div:hover, .boxes div:focus {
+      padding: 2rem;
+      transition: all 0.3s ease-out; }
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #252424;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  width: 100%; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main#home h1 {
+      font-size: 3rem;
+      margin-top: 30vh; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav, div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show, div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 70vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 2rem; }
+  .menu-branding {
+    height: 30vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("/dist/img/profile.jpg");
+      background-size: cover;
+      width: 180px;
+      height: 180px; }
+  .about-info {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'bio-img' 'bio' 'job1' 'job2' 'job3';
+    margin-bottom: 2.5rem; }
+  #about h1, #work h1, #contact h1 {
+    font-size: 4rem; }
+  #about h2, #work h2, #contact h2 {
+    font-size: 1.5rem; }
+  .imgs {
+    grid-template-columns: repeat(5, 1fr); } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh;
+    font-size: 2.5rem;
+    line-height: 2.5rem; }
+  main#home h2 {
+    font-size: 1.3rem;
+    line-height: 1.5rem; }
+  .social-links {
+    display: flex;
+    flex-direction: column; }
+  .imgs {
+    grid-template-columns: repeat(3, 1fr); }
+  #about h1, #work h1, #contact h1 {
+    font-size: 3.3rem; }
+  #about h2, #work h2, #contact h2 {
+    font-size: 1.3rem; }
+  .bio p {
+    font-size: 1.3rem; } }

@@ -1,0 +1,62 @@
+$fntTitle: "Russo One", sans-serif;
+$fntText: 'Roboto Mono', monospace;
+$clrPrimary: #323031;
+$clrSecondary: #084C61;
+$clrHighlight:#F4B942;
+$clrDanger: #8E3B46;
+$clrText: #9BC1BC;
+$show-home-img:true;
+$home-img:url('/dist/img/homebg.jpg');
+$opacity-80: 0.8;
+
+@mixin easeOut {
+  transition: all 0.3s ease-out;
+}
+@mixin background {
+  @if $show-home-img {
+    &#bg-img{
+      background: $home-img;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      
+      &:after{
+        content:'';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($clrPrimary,$opacity-80);
+        z-index: -1;
+      }
+    }
+  
+  }
+}
+@mixin mediaSm {
+  @media screen and(max-width:500px){
+    @content;
+  }
+}
+@mixin mediaMd {
+  @media screen and(max-width:768px){
+    @content;
+  }
+}
+@mixin mediaLg {
+  @media screen and(min-width:769px) and(max-width:1170px){
+    @content;
+  }
+}
+@mixin mediaXl {
+  @media screen and(min-width:1171px){
+    @content;
+  }
+}
+@mixin mediaXxl {
+  @media screen and(min-width:1400px){
+    @content;
+  }
+  
+}

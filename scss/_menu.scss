@@ -1,0 +1,107 @@
+.menu-btn{
+  position: absolute;
+  z-index: 3;
+  right: 70px;
+  top: 40px;
+  cursor: pointer;
+  @include easeOut;
+
+  .btn-line{
+    width: 32px;
+    height: 4px;
+    background-color: $clrDanger;
+    margin: 0 0 5px 0;
+    @include easeOut;
+  }
+
+  &.close{
+   
+
+   .btn-line{
+     &:nth-child(1){
+       transform: rotate(45deg) translate(5px,5px);
+  
+     }
+     &:nth-child(2){
+      display: none;
+     }
+     &:nth-child(3){
+      transform: rotate(-45deg) translate(1px,-1px);
+     }
+   }
+  }
+}
+
+.menu{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+
+  &.show{
+    visibility: visible;
+  }
+  &-branding, &-nav{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  &-nav{
+    margin: 0;
+    padding: 0;
+    background: rgba(darken($clrPrimary, 5),$opacity-80);
+    transform: translate3d(0, -100%, 0);
+    @include easeOut;
+    &.show{
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  &-branding{
+    margin: 0;
+    padding: 0;
+    background: rgba($clrPrimary, $opacity-80);
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+    &.show{
+      transform: translate3d(0, 0, 0);
+    }
+    .portrait{
+      width: 280px;
+      height: 280px;
+      background: url('/dist/img/profile.jpg') no-repeat center/cover;
+      border-radius: 50%;
+      border: solid 3px $clrHighlight;
+    }
+  }
+
+  .nav-item{
+    transform: translate3d(600px,0,0);
+    @include easeOut;
+
+    &.show{
+      transform: translate3d(0,0,0);
+    }
+    &.current>a{
+      color: $clrHighlight;
+    }
+  }
+  .nav-link{
+    display: inline-block;
+    position: relative;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    @include easeOut
+  }
+}
+
+@for $x from 1 through 4{
+  .nav-item:nth-child(#{$x}){
+    transition-delay: $x * 0.1s;
+  }
+}

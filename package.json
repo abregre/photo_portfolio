@@ -1,0 +1,15 @@
+{
+  "name": "photo-portfolio",
+  "version": "1.0.0",
+  "description": "Responsive dev portfolio",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Abregre",
+  "license": "MIT",
+  "dependencies": {
+    "lightgallery.js": "^1.3.0",
+    "node-sass": "^4.14.1"
+  }
+}
