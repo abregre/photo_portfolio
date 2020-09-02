@@ -95,7 +95,7 @@ body {
   font-family: "Roboto Mono", monospace;
   line-height: 1.5; }
   body#bg-img {
-    background: url("/dist/img/homebg.jpg");
+    background: url("img/homebg.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center; }
