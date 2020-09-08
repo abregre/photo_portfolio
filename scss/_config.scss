@@ -1,13 +1,14 @@
-$fntTitle: "Russo One", sans-serif;
-$fntText: 'Roboto Mono', monospace;
-$clrPrimary: #323031;
-$clrSecondary: #084C61;
-$clrHighlight:#F4B942;
-$clrDanger: #8E3B46;
-$clrText: #9BC1BC;
-$show-home-img:true;
-$home-img:url('../img/homebg.jpg');
-$opacity-80: 0.8;
+
+  $fntTitle: "Russo One", sans-serif;
+  $fntText: 'Roboto Mono', monospace;
+  $clrPrimary:#070707 ; 
+  $clrHighlight:#1C5D99; 
+  $clrDanger: #FF8600 ; 
+  $clrText: #FBFBFF; 
+  $show-home-img:true;
+  $home-img:url('../img/homebg.jpg');
+  $opacity-80: 0.5;
+
 
 @mixin easeOut {
   transition: all 0.3s ease-out;
@@ -15,7 +16,7 @@ $opacity-80: 0.8;
 @mixin background {
   @if $show-home-img {
     &#bg-img{
-      background: $home-img;
+      background: $home-img no-repeat;
       background-attachment: fixed;
       background-size: cover;
       background-position: center;

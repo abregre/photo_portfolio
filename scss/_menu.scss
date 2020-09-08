@@ -9,6 +9,7 @@
   .btn-line{
     width: 32px;
     height: 4px;
+    border-radius: 40px;
     background-color: $clrDanger;
     margin: 0 0 5px 0;
     @include easeOut;

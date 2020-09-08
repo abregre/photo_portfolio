@@ -2,6 +2,7 @@
 @import 'menu';
 
 
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -29,6 +30,7 @@ h6 {
     font-size: 6rem;
   }
   &.sm-heading {
+    font-weight: 400;
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(lighten($clrPrimary, 2), 0.5);
@@ -63,10 +65,15 @@ main {
   &#home {
     overflow: hidden;
     h1 {
-      margin-top: 25vh;
+      margin-top:50vh;
+      text-align: end;
+    }
+    h2{
+      text-align: end;
     }
   }
   .social-links {
+    text-align: end;
     margin-top: 1rem;
     a {
       padding: 0.4rem;
@@ -172,7 +179,7 @@ main {
 #main-footer{
   text-align: center;
   padding: 1rem;
-  background: darken($clrPrimary, 5);
+  background: darken($clrPrimary, 1);
   height: 60px;
   position: fixed;
   bottom: 0;
